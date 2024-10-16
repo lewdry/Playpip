@@ -15,7 +15,7 @@ body
     font-family: sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1.25em;
     background: #fff;
     color: #000;
@@ -29,9 +29,9 @@ main
 {
     border: 0.2rem solid #5067fb;
     padding: 2em;
-    border-radius: 4rem;
+    border-radius: 3rem;
     margin: auto;
-    max-width: 35rem;
+    max-width: 30rem;
     text-align: center;
 }
 

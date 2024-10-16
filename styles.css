@@ -13,7 +13,7 @@ html
 body
 {
     font-family: sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
     font-size: 1.8rem;
     line-height: 1.25em;
@@ -21,7 +21,7 @@ body
     color: #000;
     display: grid;
     min-height: 90vh;
-    padding: 1vmax;
+    padding: 1rem;
     margin: 0;
 }
 
@@ -29,9 +29,9 @@ main
 {
     border: 0.2rem solid #5067fb;
     padding: 2em;
-    border-radius: 2rem;
+    border-radius: 4rem;
     margin: auto;
-    max-width: 45rem;
+    max-width: 35rem;
     text-align: center;
 }
 
@@ -39,21 +39,14 @@ a
 {
     font-family: "Playwrite GB S", cursive;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     color: #5067fb;
 }
 
 h1
 {
-    margin: 0;
-    font-size: 3.9rem;
     line-height: 1.5em;
-    font-weight: 600;
-}
-
-@media (max-width: 600px)
-{
-    html { font-size: 2vw; }
+    font-weight: 200;
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){ 

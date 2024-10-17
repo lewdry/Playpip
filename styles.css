@@ -15,7 +15,7 @@ body
     font-family: sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     line-height: 1.25em;
     background: #fff;
     color: #000;
@@ -37,18 +37,30 @@ main
 
 a
 {
-    font-family: "Playwrite GB S", cursive;
+    font-family: sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
+    text-align: center;
     color: #5067fb;
+    line-height: 1.5em;
+    text-decoration: none;
 }
 
 h1
 {
     line-height: 1.5em;
-    font-weight: 200;
+    font-weight: 500;
+    color: #5067fb;
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){ 
-    body, h1 { font-weight: 200; }
+ul {
+    text-align: center; 
+    list-style-position: inside;
+    padding-left: 0;
 }
+
+li {
+    display: inline-block;
+    text-align: left;
+}
+

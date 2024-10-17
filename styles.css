@@ -1,22 +1,19 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html
-{
-    font-size: 10px;
+html {
+    font-size: 62.5%; /* This makes 1rem = 10px at default browser settings */
 }
 
-body
-{
+body {
     font-family: sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 1.5em;
-    line-height: 1.25em;
+    font-size: 1.5rem;
+    line-height: 1.1;
     background: #fff;
     color: #000;
     display: grid;
@@ -25,41 +22,59 @@ body
     margin: 0;
 }
 
-main
-{
+main {
     border: 0.2rem solid #5067fb;
-    padding: 2em;
+    padding: 2rem;
     border-radius: 3rem;
     margin: auto;
     max-width: 30rem;
     text-align: left;
+    width: 100%; /* Added to ensure full width on mobile */
 }
 
-a
-{
-    font-family: sans-serif;
+a {
+    font-family: sans-serif !important; /* Added !important to ensure styles are applied */
     font-style: normal;
     font-weight: 500;
     text-align: left;
-    color: #5067fb;
-    line-height: 1.5em;
+    color: #5067fb !important; /* Added !important to ensure color is applied */
+    line-height: 1;
     text-decoration: none;
+    display: inline-block; /* Added to improve touch targets on mobile */
+    padding: 0.2rem 0; /* Added to improve touch targets on mobile */
 }
 
-h1
-{
-    line-height: 1.5em;
+h1 {
+    line-height: 1;
     font-weight: 500;
-    color: #5067fb;
+    color: #5067fb !important; /* Added !important to override potential inline styles */
+    font-size: 2.4rem; /* Added explicit font size */
 }
 
 ul {
-    text-align: center; 
+    text-align: center;
     list-style-position: inside;
     padding-left: 0;
+    margin: 1rem 0;
 }
 
 li {
     text-align: left;
+    margin: 0.8rem 0; /* Added for better spacing on mobile */
 }
 
+/* Media queries for responsive design */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 60%; /* Slightly smaller base font size for mobile */
+    }
+    
+    main {
+        padding: 1.5rem;
+        border-radius: 2rem;
+    }
+    
+    a {
+        padding: 0.4rem 0; /* Larger touch targets on mobile */
+    }
+}

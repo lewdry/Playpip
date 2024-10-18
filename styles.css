@@ -29,19 +29,19 @@ main {
     margin: auto;
     max-width: 30rem;
     text-align: left;
-    width: 100%; /* Added to ensure full width on mobile */
+    width: 100%; 
 }
 
 a {
-    font-family: sans-serif !important; /* Added !important to ensure styles are applied */
+    font-family: sans-serif !important; 
     font-style: normal;
     font-weight: 400;
     text-align: left;
-    color: #5067fb !important; /* Added !important to ensure color is applied */
+    color: #5067fb !important; 
 
     text-decoration: none;
-    display: inline-block; /* Added to improve touch targets on mobile */
-    padding: 0.2rem 0; /* Added to improve touch targets on mobile */
+    display: inline-block; 
+    padding: 0.2rem 0; 
 }
 
 a:hover,

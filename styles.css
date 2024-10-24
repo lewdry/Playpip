@@ -61,6 +61,7 @@ ul {
     text-align: center;
     list-style-position: inside;
     padding-left: 0;
+    padding-top: 0.2rem;
     line-height: 1;
     margin: 0.2rem 0;
 }

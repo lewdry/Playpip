@@ -73,8 +73,9 @@ li {
 
 /* Optional span styling for descriptions inside links */
 .desc {
-    font-weight: 300;
     font-style: italic;
+    font-weight: 300;
+    margin-left: 0.3rem; /* small space after link */
 }
 
 /* Divider (if needed later) */

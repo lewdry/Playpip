@@ -1,47 +1,53 @@
+/* Reset & box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base font sizing */
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Playwrite GB S', sans-serif;
     font-weight: 300;
-    font-style: normal;
     font-size: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.5;
     background: #fff;
     color: #000;
     display: grid;
-    min-height: 90vh;
+    min-height: 100vh;
     padding: 1rem;
-    margin: 0;
 }
 
+/* Main container */
 main {
     border: 0.2rem solid #5067fb;
     padding: 2rem;
     border-radius: 3rem;
     margin: auto;
     max-width: 30rem;
-    text-align: left;
     width: 100%; 
+    text-align: left;
 }
 
-a {
-    font-family: sans-serif !important; 
-    font-style: normal;
+/* Header */
+h1 {
+    font-family: 'Playwrite GB S', cursive;
     font-weight: 400;
-    text-align: left;
-    color: #5067fb !important; 
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #5067fb;
+    padding-bottom: 1.5rem;
+}
 
+/* Links */
+a {
+    font-weight: 400;
+    color: #5067fb;
     text-decoration: none;
-    display: inline-block; 
-    padding: 0.2rem 0; 
 }
 
 a:hover,
@@ -49,38 +55,47 @@ a:active {
     text-decoration: underline;
 }
 
-h1 {
-    line-height: 1;
-    font-weight: 400;
-    padding-bottom: 1.1rem;
-    color: #5067fb !important; 
-    font-size: 2.4rem; 
+/* Paragraphs */
+p {
+    margin-bottom: 1.2rem;
 }
 
+/* Lists */
 ul {
-    text-align: center;
     list-style-position: inside;
     padding-left: 0;
-    padding-top: 0.2rem;
-    line-height: 1;
-    margin: 0.2rem 0;
+    margin-bottom: 1.2rem;
 }
 
 li {
-    text-align: left;
-    margin: 0.2rem 0; /* better spacing on mobile */
+    margin-bottom: 0.8rem;
 }
 
+/* Optional span styling for descriptions inside links */
+.desc {
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Divider (if needed later) */
 .hr-divider {
     border: none;
-    border-top: 0.1rem solid #5067fb; 
-    width: 80%; 
-    margin: 2px auto; 
-  }
+    border-top: 0.1rem solid #5067fb;
+    width: 80%;
+    margin: 2rem auto;
+}
 
-/* Media queries for responsive design */
+/* Responsive adjustments */
 @media screen and (max-width: 480px) {
     html {
-        font-size: 60%; /* smaller base font size for mobile */
+        font-size: 60%;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 }

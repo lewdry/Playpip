@@ -57,14 +57,14 @@ a:active {
 
 /* Paragraphs */
 p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 /* Lists */
 ul {
     list-style-position: inside;
     padding-left: 0;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 li {
@@ -75,7 +75,6 @@ li {
 .desc {
     font-style: italic;
     font-weight: 300;
-    margin-left: 0.3rem; /* small space after link */
 }
 
 /* Divider (if needed later) */

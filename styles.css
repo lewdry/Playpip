@@ -46,32 +46,31 @@ h1 {
 
 /* Paragraphs */
 #content p {
-    margin-bottom: 1.5rem; /* vertical spacing between text blocks */
+    margin-bottom: 0.5rem; /* vertical spacing between text blocks */
 }
 
 /* Lists */
 ul {
-    list-style-position: inside;
-    padding-left: 0;
-    margin: 1.5rem 0; /* space above/below list */
+    list-style-position: outside;
+    margin: 0.5rem 0; /* space above/below list */
+    padding-left: 2rem;  /* let the bullet handle its own space */
 }
 
 li {
-    margin-bottom: 0.8rem; /* space between items */
+    margin-bottom: 0.1rem; /* space between items */
 }
 
 li a {
-    display: inline-block; /* keeps title block-level inline */
+    font-weight: 400;
+    display: inline;
 }
 
-/* Description text after link */
 .desc {
-    display: inline-block;
+    display: inline;
     font-style: italic;
     font-weight: 300;
-    /* Indent wrapped lines */
-    text-indent: 0.8rem;
 }
+
 
 /* Links */
 a {

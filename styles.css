@@ -20,7 +20,7 @@ body {
     color: #000;
     display: grid;
     min-height: 100vh;
-    min-height: 100dvh
+    min-height: 100dvh;
     padding: 1rem;
 }
 

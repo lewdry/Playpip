@@ -1,57 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Playpip</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Playpip.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+<!-- Primary Meta Tags -->
+<title>Playpip - Indie Browser Games from Sydney, Australia</title>
+<meta name="title" content="Playpip - Organic Games from Sydney, Australia">
+<meta name="description" content="Play organic games by Playpip">
+<meta name="keywords" content="indie games, browser games, free games, HTML5 games, Playpip, casual games">
+<meta name="author" content="Playpip">
+<meta name="robots" content="index, follow">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="playpip.png">
-    <link rel="apple-touch-icon" href="playpip.png">
-    <meta property="og:image" content="playpip.png">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://playpip.games">
 
-    <link rel="stylesheet" href="styles.css">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://playpip.games">
+<meta property="og:title" content="Playpip - Organic Games from Sydney, Australia">
+<meta property="og:description" content="Play organic games by Playpip">
+<meta property="og:image" content="https://playpip.games/playpip.png">
+<meta property="og:image:alt" content="Playpip logo">
+<meta property="og:site_name" content="Playpip">
+<meta property="og:locale" content="en_AU">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="https://playpip.games">
+<meta property="twitter:title" content="Playpip - Organic Games from Sydney, Australia">
+<meta property="twitter:description" content="Play organic games by Playpip">
+<meta property="twitter:image" content="https://playpip.games/playpip.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="playpip.png">
+<link rel="apple-touch-icon" href="playpip.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+
+<!-- Structured Data / Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Playpip",
+  "url": "https://playpip.games",
+  "logo": "https://playpip.games/playpip.png",
+  "description": "Indie game studio creating browser-based games in Sydney, Australia",
+  "email": "hello@playpip.games",
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    }
+  },
+  "sameAs": []
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Playpip Games",
+  "description": "Collection of browser games by Playpip",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Bonk",
+        "description": "Bouncing balls game",
+        "url": "https://bonk.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Drawstring",
+        "description": "A simple sketchpad",
+        "url": "https://drawstring.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Flappy Book",
+        "description": "Library levitation game",
+        "url": "https://flappybook.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Shorely",
+        "description": "A crab's quest",
+        "url": "https://shorely.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Stardust",
+        "description": "Space simulation game",
+        "url": "https://stardust.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Where Is Bobbie Futon?",
+        "description": "Emoji hide and seek game",
+        "url": "https://whereis.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Playpip.</h1>
-        </header>
-
-        <section id="content">
-            <p>We are Playpip. We make games.</p>
-
-            <p>You can play some of them here:</p>
-            <ul>
-                <li>
-                    <a href="https://bonk.playpip.games" target="_blank">Bonk</a><span class="desc">, bouncing balls</span>
-                </li>
-                <li>
-                    <a href="https://drawstring.playpip.games" target="_blank">Drawstring</a><span class="desc">, a simple sketchpad</span>
-                </li>
-                <li>
-                    <a href="https://flappybook.playpip.games" target="_blank">Flappy Book</a><span class="desc">, library levitation</span>
-                </li>
-                <li>
-                    <a href="https://shorely.playpip.games" target="_blank">Shorely</a><span class="desc">, a crab's quest</span>
-                </li>
-                <li>
-                    <a href="https://stardust.playpip.games" target="_blank">Stardust</a><span class="desc">, space simulation</span>
-                </li>
-                <li>
-                    <a href="https://whereis.playpip.games" target="_blank">Where Is Bobbie Futon?</a><span class="desc">, emoji hide and seek</span>
-                </li>
-            </ul>
-
-            <p>We work and play on Dharawal land near Sydney, Australia.</p>
-            <p>Email us at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
-        </section>
-    </main>
+<main>
+<header>
+<h1>Playpip.</h1>
+</header>
+<section id="content">
+<p>We are Playpip. We make games.</p>
+<p>You can play some of them here:</p>
+<ul>
+<li>
+<a href="https://bonk.playpip.games" target="_blank" rel="noopener">Bonk</a><span class="desc">, bouncing balls</span>
+</li>
+<li>
+<a href="https://drawstring.playpip.games" target="_blank" rel="noopener">Drawstring</a><span class="desc">, a simple sketchpad</span>
+</li>
+<li>
+<a href="https://flappybook.playpip.games" target="_blank" rel="noopener">Flappy Book</a><span class="desc">, library levitation</span>
+</li>
+<li>
+<a href="https://shorely.playpip.games" target="_blank" rel="noopener">Shorely</a><span class="desc">, a crab's quest</span>
+</li>
+<li>
+<a href="https://stardust.playpip.games" target="_blank" rel="noopener">Stardust</a><span class="desc">, space simulation</span>
+</li>
+<li>
+<a href="https://whereis.playpip.games" target="_blank" rel="noopener">Where Is Bobbie Futon?</a><span class="desc">, emoji hide and seek</span>
+</li>
+</ul>
+<p>We work and play on Dharawal land near Sydney, Australia.</p>
+<p>Email us at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
+</section>
+</main>
 </body>
 </html>

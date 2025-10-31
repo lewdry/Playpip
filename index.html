@@ -77,9 +77,9 @@
       "position": 1,
       "item": {
         "@type": "VideoGame",
-        "name": "Bonk",
-        "description": "Bouncing balls game",
-        "url": "https://bonk.playpip.games",
+        "name": "Where Is Bobbie Futon?",
+        "description": "Emoji hide and seek game",
+        "url": "https://whereis.playpip.games",
         "gamePlatform": "Web browser"
       }
     },
@@ -99,28 +99,6 @@
       "position": 3,
       "item": {
         "@type": "VideoGame",
-        "name": "Flappy Book",
-        "description": "Library levitation game",
-        "url": "https://flappybook.playpip.games",
-        "gamePlatform": "Web browser"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "VideoGame",
-        "name": "Shorely",
-        "description": "A crab's quest",
-        "url": "https://shorely.playpip.games",
-        "gamePlatform": "Web browser"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "VideoGame",
         "name": "Stardust",
         "description": "Space simulation game",
         "url": "https://stardust.playpip.games",
@@ -129,12 +107,34 @@
     },
     {
       "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Bonk",
+        "description": "Bouncing balls game",
+        "url": "https://bonk.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "VideoGame",
+        "name": "Flappy Book",
+        "description": "Library levitation game",
+        "url": "https://flappybook.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
       "position": 6,
       "item": {
         "@type": "VideoGame",
-        "name": "Where Is Bobbie Futon?",
-        "description": "Emoji hide and seek game",
-        "url": "https://whereis.playpip.games",
+        "name": "Shorely",
+        "description": "A crab's quest",
+        "url": "https://shorely.playpip.games",
         "gamePlatform": "Web browser"
       }
     }
@@ -143,6 +143,27 @@
 </script>
 
 <link rel="stylesheet" href="styles.css">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const heading = document.querySelector('h1');
+    
+    heading.addEventListener('click', function() {
+        // Prevent multiple animations if already spinning
+        if (this.classList.contains('spinning')) {
+            return;
+        }
+        
+        // Add the spinning class to trigger animation
+        this.classList.add('spinning');
+        
+        // Remove the class after animation completes
+        setTimeout(() => {
+            this.classList.remove('spinning');
+        }, 1000); // 1 second to match the animation duration
+    });
+});
+</script>
 </head>
 <body>
 <main>
@@ -154,22 +175,22 @@
 <p>You can try some here:</p>
 <ul>
 <li>
-<a href="https://bonk.playpip.games" target="_blank" rel="noopener">Bonk</a><span class="desc">, bouncing balls</span>
+<a href="https://whereis.playpip.games" target="_blank" rel="noopener">Where Is Bobbie Futon?</a><span class="desc">, hide & seek</span>
 </li>
 <li>
 <a href="https://drawstring.playpip.games" target="_blank" rel="noopener">Drawstring</a><span class="desc">, a simple sketchpad</span>
+</li>
+<li>
+<a href="https://stardust.playpip.games" target="_blank" rel="noopener">Stardust</a><span class="desc">, space simulation</span>
+</li>
+<li>
+<a href="https://bonk.playpip.games" target="_blank" rel="noopener">Bonk</a><span class="desc">, bouncing balls</span>
 </li>
 <li>
 <a href="https://flappybook.playpip.games" target="_blank" rel="noopener">Flappy Book</a><span class="desc">, library levitation</span>
 </li>
 <li>
 <a href="https://shorely.playpip.games" target="_blank" rel="noopener">Shorely</a><span class="desc">, a crab's quest</span>
-</li>
-<li>
-<a href="https://stardust.playpip.games" target="_blank" rel="noopener">Stardust</a><span class="desc">, space simulation</span>
-</li>
-<li>
-<a href="https://whereis.playpip.games" target="_blank" rel="noopener">Where Is Bobbie Futon?</a><span class="desc">, hide & seek</span>
 </li>
 </ul>
 <p>We work and play on Dharawal land near Sydney, Australia.</p>

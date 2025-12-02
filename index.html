@@ -194,35 +194,131 @@ document.addEventListener('DOMContentLoaded', function() {
 </header>
 <section id="content">
 <p>We are Playpip. We make games.</p>
-<p>You can try some here:</p>
-<ul>
-<li>
-<a href="https://home.playpip.games" target="_blank" rel="noopener">Home</a><span class="desc">, 1988's hottest website</span>
-</li>
-<li>
-<a href="https://lewdry.github.io/littledrop" target="_blank" rel="noopener">Littledrop</a><span class="desc">, make a splash!</span>
-</li>
-<li>
-<a href="https://whereis.playpip.games" target="_blank" rel="noopener">Where Is Bobbie Futon?</a><span class="desc">, hide & seek</span>
-</li>
-<li>
-<a href="https://drawstring.playpip.games" target="_blank" rel="noopener">Drawstring</a><span class="desc">, a simple sketchpad</span>
-</li>
-<li>
-<a href="https://stardust.playpip.games" target="_blank" rel="noopener">Stardust</a><span class="desc">, space simulation</span>
-</li>
-<li>
-<a href="https://bonk.playpip.games" target="_blank" rel="noopener">Bonk</a><span class="desc">, bouncing balls</span>
-</li>
-<li>
-<a href="https://flappybook.playpip.games" target="_blank" rel="noopener">Flappy Book</a><span class="desc">, library levitation</span>
-</li>
-<li>
-<a href="https://shorely.playpip.games" target="_blank" rel="noopener">Shorely</a><span class="desc">, a crab's quest</span>
-</li>
-</ul>
 <p>We work and play on Dharawal land near Sydney, Australia.</p>
-<p>Email us at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
+
+<!-- Games grid: two-column cards with screenshot + details -->
+<div class="games-grid" aria-label="Playpip games">
+  <article class="game-card">
+    <a class="game-link" href="https://home.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Home — 1988's hottest website">
+        <picture>
+          <source type="image/webp" srcset="images/home-480.webp 480w, images/home-720.webp 720w, images/home-1080.webp 1080w, images/home-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/home-screenshot.png" alt="Screenshot: Home" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Home</h3>
+        <p class="desc">1988's hottest website</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://lewdry.github.io/littledrop" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Littledrop — make a splash">
+        <picture>
+          <source type="image/webp" srcset="images/littledrop-480.webp 480w, images/littledrop-720.webp 720w, images/littledrop-1080.webp 1080w, images/littledrop-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/littledrop-screenshot.png" alt="Screenshot: Littledrop" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Littledrop</h3>
+        <p class="desc">Pond scroller, make a splash!</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://whereis.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Where Is Bobbie Futon? — hide & seek">
+        <picture>
+          <source type="image/webp" srcset="images/whereis-480.webp 480w, images/whereis-720.webp 720w, images/whereis-1080.webp 1080w, images/whereis-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/whereis-screenshot.png" alt="Screenshot: Where Is Bobbie Futon?" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Where Is Bobbie Futon?</h3>
+        <p class="desc">Emoji hide and seek</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://drawstring.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Drawstring — a simple sketchpad">
+        <picture>
+          <source type="image/webp" srcset="images/drawstring-480.webp 480w, images/drawstring-720.webp 720w, images/drawstring-1080.webp 1080w, images/drawstring-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/drawstring-screenshot.png" alt="Screenshot: Drawstring" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Drawstring</h3>
+        <p class="desc">A simple sketchpad</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://stardust.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Stardust — space simulation">
+        <picture>
+          <source type="image/webp" srcset="images/stardust-480.webp 480w, images/stardust-720.webp 720w, images/stardust-1080.webp 1080w, images/stardust-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/stardust-screenshot.png" alt="Screenshot: Stardust" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Stardust</h3>
+        <p class="desc">Space simulation</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://bonk.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Bonk — bouncing balls">
+        <picture>
+          <source type="image/webp" srcset="images/bonk-480.webp 480w, images/bonk-720.webp 720w, images/bonk-1080.webp 1080w, images/bonk-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/bonk-screenshot.png" alt="Screenshot: Bonk" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Bonk</h3>
+        <p class="desc">Colourful, bouncing balls</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://flappybook.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Flappy Book — library levitation">
+        <picture>
+          <source type="image/webp" srcset="images/flappybook-480.webp 480w, images/flappybook-720.webp 720w, images/flappybook-1080.webp 1080w, images/flappybook-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/flappybook-screenshot.png" alt="Screenshot: Flappy Book" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Flappy Book</h3>
+        <p class="desc">Library levitation</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
+    <a class="game-link" href="https://shorely.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Shorely — a crab's quest">
+        <picture>
+          <source type="image/webp" srcset="images/shorely-480.webp 480w, images/shorely-720.webp 720w, images/shorely-1080.webp 1080w, images/shorely-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <img src="images/shorely-screenshot.png" alt="Screenshot: Shorely" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Shorely</h3>
+        <p class="desc">A crab's quest</p>
+      </div>
+    </a>
+  </article>
+</div>
+<p><br>Email us at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
 </section>
 </main>
 </body>

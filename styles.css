@@ -30,7 +30,8 @@ main {
     padding: 2rem;
     border-radius: 3rem;
     margin: auto;
-    max-width: 32rem;
+    /* set a comfortable narrower max width (600px) */
+    max-width: 60rem; /* 60rem @ 1rem = 10px => 600px */
     width: 100%; 
     text-align: left;
 }
@@ -125,3 +126,74 @@ a:active {
         font-size: 2rem;
     }
 }
+
+/* Games grid: card-like, two-column layout on wide screens, stacked on phones */
+.games-grid {
+    display: grid;
+    /* Always use two columns (never shrink to a single column as requested) */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-top: 1rem;
+}
+
+.game-card {
+    background: linear-gradient(180deg, rgba(80,103,251,0.04), rgba(80,103,251,0.01));
+    border: 0.1rem solid rgba(80,103,251,0.12);
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+.game-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.screenshot {
+    background: #111;
+    display: block;
+    width: 100%;
+    /* make thumbnails square */
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.screenshot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meta {
+    padding: 1rem 1.2rem;
+}
+
+.meta h3 {
+    margin-bottom: 0.3rem;
+    font-size: 1.6rem;
+    color: #223;
+}
+
+.meta .desc {
+    margin: 0;
+    color: #444;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.game-card:hover,
+.game-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(16,30,115,0.12);
+}
+
+.game-link:focus {
+    outline: 0.2rem solid rgba(80,103,251,0.35);
+    outline-offset: 0.3rem;
+}
+
+/* Two columns on medium/large screens */
+/* Two columns enforced at all sizes — no media query needed */

@@ -1,0 +1,17 @@
+node_modules/
+package-lock.json
+package.json
+npm-debug.log
+
+# Editor / OS
+.vscode/
+.DS_Store
+
+# Temporary screenshot files
+.screenshot-*.tmp.png
+
+# Generated images (optionally ignore if you generate in CI only)
+# images/*-480.webp
+# images/*-720.webp
+# images/*-1080.webp
+# images/*-1600.webp

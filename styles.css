@@ -12,9 +12,10 @@ html {
 
 /* Body */
 body {
-    font-family: sans-serif; /* default for paragraphs, lists, links */
+    font-family: sans-serif;
+    /* default for paragraphs, lists, links */
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.5;
     background: #fff;
     color: #000;
@@ -26,23 +27,25 @@ body {
 
 /* Main container */
 main {
-    border: 0.2rem solid #5067fb;
+    border: 0.2rem solid #4055e0;
     padding: 2rem;
     border-radius: 3rem;
     margin: auto;
     /* set a comfortable narrower max width (600px) */
-    max-width: 60rem; /* 60rem @ 1rem = 10px => 600px */
-    width: 100%; 
+    max-width: 60rem;
+    /* 60rem @ 1rem = 10px => 600px */
+    width: 100%;
     text-align: left;
 }
 
 /* Header */
 h1 {
-    font-family: 'Playwrite GB S', cursive; /* fancy font only for heading */
+    font-family: 'Playwrite GB S', cursive;
+    /* fancy font only for heading */
     font-weight: 400;
     font-size: 2.4rem;
     line-height: 1.2;
-    color: #5067fb;
+    color: #4055e0;
     padding-bottom: 1.5rem;
     cursor: pointer;
     transition: transform 0.1s ease;
@@ -59,6 +62,7 @@ h1.spinning {
     0% {
         transform: rotateY(0deg);
     }
+
     100% {
         transform: rotateY(360deg);
     }
@@ -66,18 +70,22 @@ h1.spinning {
 
 /* Paragraphs */
 #content p {
-    margin-bottom: 0.5rem; /* vertical spacing between text blocks */
+    margin-bottom: 0.5rem;
+    /* vertical spacing between text blocks */
 }
 
 /* Lists */
 ul {
     list-style-position: outside;
-    margin: 0.5rem 0; /* space above/below list */
-    padding-left: 2rem;  /* let the bullet handle its own space */
+    margin: 0.5rem 0;
+    /* space above/below list */
+    padding-left: 2rem;
+    /* let the bullet handle its own space */
 }
 
 li {
-    margin-bottom: 0.1rem; /* space between items */
+    margin-bottom: 0.1rem;
+    /* space between items */
 }
 
 li a {
@@ -95,7 +103,7 @@ li a {
 /* Links */
 a {
     font-weight: 400;
-    color: #5067fb;
+    color: #4055e0;
     text-decoration: none;
 }
 
@@ -107,7 +115,7 @@ a:active {
 /* Divider (optional) */
 .hr-divider {
     border: none;
-    border-top: 0.1rem solid #5067fb;
+    border-top: 0.1rem solid #4055e0;
     width: 80%;
     margin: 2rem auto;
 }
@@ -137,8 +145,8 @@ a:active {
 }
 
 .game-card {
-    background: linear-gradient(180deg, rgba(80,103,251,0.04), rgba(80,103,251,0.01));
-    border: 0.1rem solid rgba(80,103,251,0.12);
+    background: linear-gradient(180deg, rgba(64, 85, 224, 0.04), rgba(64, 85, 224, 0.01));
+    border: 0.1rem solid rgba(64, 85, 224, 0.12);
     border-radius: 1.2rem;
     overflow: hidden;
 }
@@ -165,6 +173,7 @@ a:active {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 1.2rem 1.2rem 0 0;
 }
 
 .meta {
@@ -187,13 +196,22 @@ a:active {
 .game-card:hover,
 .game-card:focus-within {
     transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(16,30,115,0.12);
+    box-shadow: 0 6px 20px rgba(16, 30, 115, 0.12);
 }
 
 .game-link:focus {
-    outline: 0.2rem solid rgba(80,103,251,0.35);
+    outline: 0.2rem solid rgba(64, 85, 224, 0.35);
     outline-offset: 0.3rem;
 }
 
 /* Two columns on medium/large screens */
 /* Two columns enforced at all sizes — no media query needed */
+
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #666;
+}

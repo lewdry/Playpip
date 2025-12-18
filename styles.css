@@ -158,7 +158,6 @@ a {
 
 a:hover,
 a:active {
-    /* remove underline — we use card glow instead */
     text-decoration: none;
     color: var(--brand-blue);
 } 

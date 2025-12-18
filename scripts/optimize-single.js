@@ -12,29 +12,30 @@ async function optimizeOne(name) {
     return;
   }
 
-  // write a square PNG fallback (1600x1600) to tmp then rename
+  // write a rectangular PNG fallback (1600x1000) to tmp then rename
   const tmpPng = path.join(dir, `${name}-screenshot.tmp.png`);
   const outPng = path.join(dir, `${name}-screenshot.png`);
   try {
     await sharp(inPath)
-      .resize({ width: 1600, height: 1600, fit: 'cover', position: 'centre' })
+      .resize({ width: 1600, height: 1000, fit: 'cover', position: 'centre' })
       .png({ quality: 90 })
       .toFile(tmpPng);
     fs.renameSync(tmpPng, outPng);
-    console.log('Wrote square PNG', outPng);
+    console.log('Wrote rectangular PNG', outPng);
   } catch (err) {
     if (fs.existsSync(tmpPng)) fs.unlinkSync(tmpPng);
-    console.warn('Failed square PNG for', name, err.message);
+    console.warn('Failed rectangular PNG for', name, err.message);
   }
 
-  // generate square webp variants
+  // generate rectangular webp variants
   for (const w of sizes) {
+    const h = Math.round(w * 1000 / 1600);
     const outWebp = path.join(dir, `${name}-${w}.webp`);
     await sharp(inPath)
-      .resize({ width: w, height: w, fit: 'cover', position: 'centre' })
+      .resize({ width: w, height: h, fit: 'cover', position: 'centre' })
       .webp({ quality: 80 })
       .toFile(outWebp);
-    console.log('Wrote', outWebp);
+    console.log('Wrote', outWebp, `(${w}x${h})`);
   }
 }
 

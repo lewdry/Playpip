@@ -163,8 +163,8 @@ a:active {
     background: #111;
     display: block;
     width: 100%;
-    /* make thumbnails square */
-    aspect-ratio: 1 / 1;
+    /* make thumbnails a horizontal rectangle (16:10 = 1600x1000) */
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
 

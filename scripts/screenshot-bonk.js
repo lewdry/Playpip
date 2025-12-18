@@ -9,7 +9,7 @@ async function captureBonk() {
   const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
   try {
-    await page.setViewport({ width: 1600, height: 900, deviceScaleFactor: 1 });
+    await page.setViewport({ width: 1600, height: 1000, deviceScaleFactor: 1 });
     const url = 'https://bonk.playpip.games';
     console.log('Opening', url);
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });

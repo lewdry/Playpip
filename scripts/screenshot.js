@@ -21,8 +21,8 @@ async function takeScreenshots() {
   try {
     for (const t of targets) {
       const page = await browser.newPage();
-      // Large desktop viewport so we get a good quality screenshot
-      await page.setViewport({ width: 1600, height: 900, deviceScaleFactor: 1 });
+      // Large desktop viewport sized to 1600x1000 so screenshots match new aspect ratio
+      await page.setViewport({ width: 1600, height: 1000, deviceScaleFactor: 1 });
       console.log('Loading', t.url);
       try {
         // navigate and wait until network appears idle

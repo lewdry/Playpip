@@ -10,7 +10,8 @@ const targets = [
   { url: 'https://stardust.playpip.games', name: 'stardust' },
   { url: 'https://bonk.playpip.games', name: 'bonk' },
   { url: 'https://flappybook.playpip.games', name: 'flappybook' },
-  { url: 'https://shorely.playpip.games', name: 'shorely' }
+  { url: 'https://shorely.playpip.games', name: 'shorely' },
+  { url: 'https://topple.playpip.games', name: 'topple' }
 ];
 
 async function takeScreenshots() {

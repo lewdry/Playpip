@@ -10,19 +10,32 @@ html {
     font-size: 62.5%;
 }
 
+/* Theme variables */
+:root{
+  --brand-blue: #4055e0;
+  --sun: #FFD24D;
+  --melon: #FF6B81;
+  --mint: #2DE1A2;
+  --lav: #BFA0FF;
+  --ivory: #fffaf4;
+  --ink: #222233;
+  --radius: 1rem;
+  --card-shadow: 0 18px 36px rgba(64,85,224,0.10);
+}
+
 /* Body */
 body {
-    font-family: sans-serif;
-    /* default for paragraphs, lists, links */
+    font-family: 'M PLUS Rounded 1c', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    /* friendly rounded UI font */
     font-weight: 300;
     font-size: 1.6rem;
     line-height: 1.5;
-    background: #fff;
-    color: #000;
+    background: radial-gradient(800px 400px at 10% 10%, rgba(191,160,255,0.06), transparent), linear-gradient(180deg,var(--ivory),#fff);
+    color: var(--ink);
     display: grid;
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 1rem;
+    padding: 1.6rem;
 }
 
 /* Main container */
@@ -38,35 +51,51 @@ main {
     text-align: left;
 }
 
-/* Header */
+/* Header / Hero */
+.hero{
+  position: relative;
+  padding: 2.4rem 1.6rem;
+  margin-bottom: 1.2rem;
+  overflow: visible;
+}
+.hero-inner{ max-width: 60rem; z-index: 1; position: relative; }
+
 h1 {
     font-family: 'Playwrite GB S', cursive;
-    /* fancy font only for heading */
+    /* keep your heading font */
     font-weight: 400;
-    font-size: 2.4rem;
-    line-height: 1.2;
-    color: #4055e0;
-    padding-bottom: 1.5rem;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    line-height: 1;
+    color: var(--brand-blue);
+    padding-bottom: 0.6rem;
     cursor: pointer;
-    transition: transform 0.1s ease;
     display: inline-block;
-    perspective: 1000px;
+    position: relative;
 }
 
-h1.spinning {
-    animation: spin360 1s ease-in-out;
-    transform-style: preserve-3d;
+h1:focus-visible{ outline: 0.28rem solid var(--sun); outline-offset: .4rem; border-radius: .6rem; }
+
+.hero-sub{
+  margin-top: 0.4rem;
+  color: rgba(34,34,51,0.8);
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
-@keyframes spin360 {
-    0% {
-        transform: rotateY(0deg);
-    }
+.hero-decor{ position: absolute; inset:0; pointer-events:none; z-index:0; }
+.blob{ position:absolute; width:220px; height:220px; opacity:.12; filter: blur(14px); transform-origin:center; animation: bob 6s ease-in-out infinite; }
+.blob-left{ left:-60px; top:-40px; fill: var(--melon); }
+.blob-right{ right:-80px; top:-20px; fill: var(--mint); }
 
-    100% {
-        transform: rotateY(360deg);
-    }
-}
+@keyframes bob{ 0%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} 100%{ transform: translateY(0);} }
+
+/* Confetti removed per request */
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){ .blob{ animation: none !important; } }
+
+h1.spinning{ animation: spin360 1s ease-in-out; transform-style: preserve-3d; }
+@keyframes spin360{ 0%{ transform: rotateY(0deg);} 100%{ transform: rotateY(360deg);} }
 
 /* Paragraphs */
 #content p {
@@ -103,14 +132,16 @@ li a {
 /* Links */
 a {
     font-weight: 400;
-    color: #4055e0;
+    color: var(--brand-blue);
     text-decoration: none;
 }
 
 a:hover,
 a:active {
-    text-decoration: underline;
-}
+    /* remove underline — we use card glow instead */
+    text-decoration: none;
+    color: color: var(--brand-blue);
+} 
 
 /* Divider (optional) */
 .hr-divider {
@@ -135,21 +166,24 @@ a:active {
     }
 }
 
-/* Games grid: card-like, two-column layout on wide screens, stacked on phones */
+/* Games grid: 3 columns desktop, 1 column mobile */
 .games-grid {
     display: grid;
-    /* Always use two columns (never shrink to a single column as requested) */
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
-    margin-top: 1rem;
+    margin-top: 1.6rem;
+}
+@media (max-width: 720px){
+  .games-grid { grid-template-columns: 1fr; }
 }
 
 .game-card {
-    background: linear-gradient(180deg, rgba(64, 85, 224, 0.04), rgba(64, 85, 224, 0.01));
-    border: 0.1rem solid rgba(64, 85, 224, 0.12);
-    border-radius: 0.8rem;
+    border-radius: var(--radius);
+    background: linear-gradient(180deg,#ffffff, #fff8f2);
+    border: 0.12rem solid rgba(64,85,224,0.06);
     overflow: hidden;
-    transition: box-shadow 200ms ease, border-color 200ms ease, background 200ms ease;
+    transition: box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    box-shadow: var(--card-shadow);
 }
 
 .game-link {
@@ -164,52 +198,28 @@ a:active {
     background: transparent;
     display: block;
     width: 100%;
-    /* make thumbnails a horizontal rectangle (16:10 = 1600x1000) */
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    border-radius: 0.8rem 0.8rem 0 0;
+    border-radius: .9rem .9rem 0 0;
+}
+.screenshot img{ width:100%; height:100%; object-fit:cover; }
+
+.meta{ padding: 1rem 1.2rem; }
+.meta h3{ margin-bottom:.3rem; font-size:1.8rem; font-family:'Baloo 2', 'Playwrite GB S', system-ui, sans-serif; color: var(--brand-blue); }
+.meta .desc{ margin:0; color: #444; font-size:1.3rem; font-style: italic; }
+
+/* NO movement on hover — use visual cues only (shadow, color, subtle glow) */
+.game-card:hover, .game-card:focus-within{
+  /* layered shadows: base + diffuse brand-blue glow */
+  box-shadow: 0 22px 44px rgba(64,85,224,0.12), 0 0 32px 6px rgba(64,85,224,0.06);
+  border-color: rgba(64,85,224,0.22);
+  background: linear-gradient(180deg, #fff, #fff7f2);
 }
 
-.screenshot img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-}
+/* Friendly focus ring for keyboard users */
+.game-link:focus{ outline: 0.28rem solid var(--sun); outline-offset: .3rem; border-radius: var(--radius); }
 
-.meta {
-    padding: 1rem 1.2rem;
-}
-
-.meta h3 {
-    margin-bottom: 0.3rem;
-    font-size: 1.6rem;
-    color: #223;
-}
-
-.meta .desc {
-    margin: 0;
-    color: #444;
-    font-size: 1.3rem;
-    font-style: italic;
-}
-
-.game-card:hover,
-.game-card:focus-within {
-    transform: none;
-    box-shadow: 0 12px 30px rgba(64, 85, 224, 0.16);
-    border-color: rgba(64, 85, 224, 0.22);
-    background: linear-gradient(180deg, rgba(64, 85, 224, 0.06), rgba(64, 85, 224, 0.015));
-}
-
-.game-link:focus {
-    outline: 0.2rem solid rgba(64, 85, 224, 0.35);
-    outline-offset: 0.3rem;
-}
-
-/* Two columns on medium/large screens */
-/* Two columns enforced at all sizes — no media query needed */
+/* Keep footer spacing */
 
 footer {
     margin-top: 4rem;

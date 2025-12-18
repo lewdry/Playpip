@@ -36,10 +36,10 @@
 <link rel="icon" type="image/png" href="playpip.png">
 <link rel="apple-touch-icon" href="playpip.png">
 
-<!-- Google Fonts (only weight 400) -->
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@400&family=Baloo+2:wght@400;700&family=M+PLUS+Rounded+1c:wght@300;500&display=swap" rel="stylesheet">
 
 
 <!-- Structured Data / Schema.org -->
@@ -77,6 +77,17 @@
       "position": 1,
       "item": {
         "@type": "VideoGame",
+        "name": "Topple",
+        "description": "Building blocks",
+        "url": "https://topple.playpip.games",
+        "gamePlatform": "Web browser"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "VideoGame",
         "name": "Home",
         "description": "A website from 1988",
         "url": "https://home.playpip.games",
@@ -85,7 +96,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 2,
+      "position": 3,
       "item": {
         "@type": "VideoGame",
         "name": "Littledrop",
@@ -96,7 +107,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 3,
+      "position": 4,
       "item": {
         "@type": "VideoGame",
         "name": "Where Is Bobbie Futon?",
@@ -107,7 +118,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 5,
       "item": {
         "@type": "VideoGame",
         "name": "Drawstring",
@@ -118,7 +129,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 6,
       "item": {
         "@type": "VideoGame",
         "name": "Stardust",
@@ -129,7 +140,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 7,
       "item": {
         "@type": "VideoGame",
         "name": "Bonk",
@@ -140,7 +151,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 7,
+      "position": 8,
       "item": {
         "@type": "VideoGame",
         "name": "Flappy Book",
@@ -151,7 +162,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 8,
+      "position": 9,
       "item": {
         "@type": "VideoGame",
         "name": "Shorely",
@@ -161,7 +172,7 @@
       }
     }
   ]
-}
+} 
 </script>
 
 <link rel="stylesheet" href="styles.css">
@@ -170,27 +181,38 @@
 document.addEventListener('DOMContentLoaded', function() {
     const heading = document.querySelector('h1');
     
-    heading.addEventListener('click', function() {
-        // Prevent multiple animations if already spinning
-        if (this.classList.contains('spinning')) {
-            return;
+    function triggerSpin(){
+        if (heading.classList.contains('spinning')) return;
+        heading.classList.add('spinning');
+        setTimeout(() => heading.classList.remove('spinning'), 1000);
+    }
+
+    heading.addEventListener('click', triggerSpin);
+
+    heading.addEventListener('keydown', function(e){
+        // activate with Enter or Space for keyboard users
+        if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space'){
+            e.preventDefault();
+            triggerSpin();
         }
-        
-        // Add the spinning class to trigger animation
-        this.classList.add('spinning');
-        
-        // Remove the class after animation completes
-        setTimeout(() => {
-            this.classList.remove('spinning');
-        }, 1000); // 1 second to match the animation duration
     });
 });
 </script>
 </head>
 <body>
 <main>
-<header>
-<h1>Playpip.</h1>
+<header class="hero">
+  <div class="hero-inner">
+    <h1 tabindex="0">Playpip.</h1>
+  </div>
+
+  <div class="hero-decor" aria-hidden="true">
+    <!-- soft blobs -->
+    <svg class="blob blob-left" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
+    <svg class="blob blob-right" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
+
+
+  </div>
 </header>
 <section id="content">
 <p>We are Playpip. We make games.</p>
@@ -199,10 +221,25 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Games grid: two-column cards with screenshot + details -->
 <div class="games-grid" aria-label="Playpip games">
   <article class="game-card">
+    <a class="game-link" href="https://topple.playpip.games" target="_blank" rel="noopener">
+      <div class="screenshot" role="img" aria-label="Topple — Building blocks">
+        <picture>
+          <source type="image/webp" srcset="images/topple-480.webp 480w, images/topple-1080.webp 1080w" sizes="min(50vw, 280px)">
+          <img src="images/topple-screenshot.png" alt="Screenshot: Topple" loading="lazy" decoding="async" />
+        </picture>
+      </div>
+      <div class="meta">
+        <h3>Topple</h3>
+        <p class="desc">Building blocks</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="game-card">
     <a class="game-link" href="https://home.playpip.games" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Home — 1988's hottest website">
         <picture>
-          <source type="image/webp" srcset="images/home-480.webp 480w, images/home-720.webp 720w, images/home-1080.webp 1080w, images/home-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/home-480.webp 480w, images/home-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/home-screenshot.png" alt="Screenshot: Home" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -217,27 +254,27 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="game-link" href="https://lewdry.github.io/littledrop" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Littledrop — make a splash">
         <picture>
-          <source type="image/webp" srcset="images/littledrop-480.webp 480w, images/littledrop-720.webp 720w, images/littledrop-1080.webp 1080w, images/littledrop-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/littledrop-480.webp 480w, images/littledrop-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/littledrop-screenshot.png" alt="Screenshot: Littledrop" loading="lazy" decoding="async" />
         </picture>
       </div>
       <div class="meta">
         <h3>Littledrop</h3>
-        <p class="desc">Top-down pond scrolling.</p>
+        <p class="desc">Top-down pond scrolling</p>
       </div>
     </a>
   </article>
 
   <article class="game-card">
     <a class="game-link" href="https://whereis.playpip.games" target="_blank" rel="noopener">
-      <div class="screenshot" role="img" aria-label="Where Is Bobbie Futon? — hide & seek">
+      <div class="screenshot" role="img" aria-label="Where Is? — hide & seek">
         <picture>
-          <source type="image/webp" srcset="images/whereis-480.webp 480w, images/whereis-720.webp 720w, images/whereis-1080.webp 1080w, images/whereis-1600.webp 1600w" sizes="min(50vw, 280px)">
-          <img src="images/whereis-screenshot.png" alt="Screenshot: Where Is Bobbie Futon?" loading="lazy" decoding="async" />
+          <source type="image/webp" srcset="images/whereis-480.webp 480w, images/whereis-1080.webp 1080w" sizes="min(50vw, 280px)">
+          <img src="images/whereis-screenshot.png" alt="Screenshot: Where Is?" loading="lazy" decoding="async" />
         </picture>
       </div>
       <div class="meta">
-        <h3>Where Is Bobbie Futon?</h3>
+        <h3>Where Is?</h3>
         <p class="desc">Emoji hide and seek</p>
       </div>
     </a>
@@ -247,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="game-link" href="https://drawstring.playpip.games" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Drawstring — a simple sketchpad">
         <picture>
-          <source type="image/webp" srcset="images/drawstring-480.webp 480w, images/drawstring-720.webp 720w, images/drawstring-1080.webp 1080w, images/drawstring-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/drawstring-480.webp 480w, images/drawstring-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/drawstring-screenshot.png" alt="Screenshot: Drawstring" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -262,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="game-link" href="https://stardust.playpip.games" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Stardust — space simulation">
         <picture>
-          <source type="image/webp" srcset="images/stardust-480.webp 480w, images/stardust-720.webp 720w, images/stardust-1080.webp 1080w, images/stardust-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/stardust-480.webp 480w, images/stardust-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/stardust-screenshot.png" alt="Screenshot: Stardust" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -277,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="game-link" href="https://bonk.playpip.games" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Bonk — bouncing balls">
         <picture>
-          <source type="image/webp" srcset="images/bonk-480.webp 480w, images/bonk-720.webp 720w, images/bonk-1080.webp 1080w, images/bonk-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/bonk-480.webp 480w, images/bonk-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/bonk-screenshot.png" alt="Screenshot: Bonk" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -292,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="game-link" href="https://flappybook.playpip.games" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Flappy Book — library levitation">
         <picture>
-          <source type="image/webp" srcset="images/flappybook-480.webp 480w, images/flappybook-720.webp 720w, images/flappybook-1080.webp 1080w, images/flappybook-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/flappybook-480.webp 480w, images/flappybook-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/flappybook-screenshot.png" alt="Screenshot: Flappy Book" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -307,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="game-link" href="https://shorely.playpip.games" target="_blank" rel="noopener">
       <div class="screenshot" role="img" aria-label="Shorely — a crab's quest">
         <picture>
-          <source type="image/webp" srcset="images/shorely-480.webp 480w, images/shorely-720.webp 720w, images/shorely-1080.webp 1080w, images/shorely-1600.webp 1600w" sizes="min(50vw, 280px)">
+          <source type="image/webp" srcset="images/shorely-480.webp 480w, images/shorely-1080.webp 1080w" sizes="min(50vw, 280px)">
           <img src="images/shorely-screenshot.png" alt="Screenshot: Shorely" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -317,7 +354,8 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </a>
   </article>
-</div>
+
+</div> 
 <footer>
 <p>Email Playpip at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
 <p>Built by <a href="lewisdryburgh.com">Lewis Dryburgh</a></p>

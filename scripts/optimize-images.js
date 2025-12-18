@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const names = ['home','littledrop','whereis','drawstring','stardust','bonk','flappybook','shorely'];
-const sizes = [480, 720, 1080, 1600];
+const names = ['topple','home','littledrop','whereis','drawstring','stardust','bonk','flappybook','shorely'];
+const sizes = [480, 1080];
 
 async function optimize() {
   const dir = path.resolve(__dirname, '..', 'images');

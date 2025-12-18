@@ -40,6 +40,7 @@ body {
 
 /* Main container */
 main {
+    position: relative;
     border: 0.2rem solid #4055e0;
     padding: 2rem;
     border-radius: 3rem;
@@ -49,7 +50,7 @@ main {
     /* 60rem @ 1rem = 10px => 600px */
     width: 100%;
     text-align: left;
-}
+} 
 
 /* Header / Hero */
 .hero{
@@ -65,12 +66,15 @@ h1 {
     /* keep your heading font */
     font-weight: 400;
     font-size: clamp(2.8rem, 8vw, 6rem);
-    line-height: 1;
+    /* a slightly taller line-height prevents descender clipping on some browsers */
+    line-height: 1.08;
     color: var(--brand-blue);
-    padding-bottom: 0.6rem;
+    /* more breathing room below the glyphs */
+    padding-bottom: 0.9rem;
     cursor: pointer;
     display: inline-block;
     position: relative;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1:focus-visible{ outline: 0.28rem solid var(--sun); outline-offset: .4rem; border-radius: .6rem; }
@@ -83,11 +87,27 @@ h1:focus-visible{ outline: 0.28rem solid var(--sun); outline-offset: .4rem; bord
 }
 
 .hero-decor{ position: absolute; inset:0; pointer-events:none; z-index:0; }
-.blob{ position:absolute; width:220px; height:220px; opacity:.12; filter: blur(14px); transform-origin:center; animation: bob 6s ease-in-out infinite; }
-.blob-left{ left:-60px; top:-40px; fill: var(--melon); }
-.blob-right{ right:-80px; top:-20px; fill: var(--mint); }
+.blob{ position:absolute; width:220px; height:220px; opacity:.12; filter: blur(14px); transform-origin:center; /* center horizontally around the left% */ transform: translateX(-50%) translateY(0); will-change: transform; animation: bob 6s ease-in-out infinite; }
+.blob-left{ left:-60px; fill: var(--melon); }
+.blob-right{ right:-80px; fill: var(--mint); }
 
-@keyframes bob{ 0%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} 100%{ transform: translateY(0);} }
+/* Scatter blobs around the card using both top and left offsets (centered) */
+.blob--1  { top: 4%;   left: -6%;  width:260px; height:260px; animation-delay: 0s; opacity:.13; fill: var(--melon); }
+.blob--2  { top: 12%;  left: 6%;   width:210px; height:210px; animation-delay: .6s; opacity:.12; fill: var(--mint); }
+.blob--3  { top: 20%;  left: 18%;  width:230px; height:230px; animation-delay: 1.2s; opacity:.12; fill: var(--lav); }
+.blob--4  { top: 28%;  left: 31%;  width:200px; height:200px; animation-delay: 1.8s; opacity:.11; fill: var(--sun); }
+.blob--5  { top: 36%;  left: 44%;  width:260px; height:260px; animation-delay: 2.4s; opacity:.11; fill: var(--melon); }
+.blob--6  { top: 44%;  left: 56%;  width:220px; height:220px; animation-delay: 3.0s; opacity:.10; fill: var(--mint); }
+.blob--7  { top: 52%;  left: 68%;  width:240px; height:240px; animation-delay: 3.6s; opacity:.10; fill: var(--lav); }
+.blob--8  { top: 60%;  left: 81%;  width:200px; height:200px; animation-delay: 4.2s; opacity:.09; fill: var(--sun); }
+.blob--9  { top: 72%;  left: 93%;  width:230px; height:230px; animation-delay: 4.8s; opacity:.08; fill: var(--melon); }
+.blob--10 { top: 84%;  left: 106%; width:210px; height:210px; animation-delay: 5.4s; opacity:.08; fill: var(--mint); }
+
+/* Positions are centered on their left% using translateX(-50%) so blobs extend equally left/right */
+.blob-left{ fill: var(--melon); }
+.blob-right{ fill: var(--mint); }
+
+@keyframes bob{ 0%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(-12px);} 100%{ transform: translateX(-50%) translateY(0);} }
 
 /* Confetti removed per request */
 
@@ -159,11 +179,28 @@ a:active {
 
     main {
         padding: 1.5rem;
+        overflow: hidden; /* clip blobs on small screens */
     }
 
+    /* Make the heading more prominent on small screens */
     h1 {
-        font-size: 2rem;
+        font-size: 3.2rem;
     }
+
+    /* Prevent hero decorations from causing horizontal overflow on small screens */
+    .hero {
+        overflow: hidden;
+    }
+
+    /* Keep decorative blobs smaller and symmetric so they extend equally left/right */
+    .blob {
+        width: 140px;
+        height: 140px;
+        opacity: .11;
+        filter: blur(12px);
+    }
+    /* center blobs on mobile so they don't push off-screen while remaining balanced (translateX keeps them centered on the % point) */
+    .blob--1, .blob--2, .blob--3, .blob--4, .blob--5, .blob--6, .blob--7, .blob--8, .blob--9, .blob--10 { left: 50%; right: auto; }
 }
 
 /* Games grid: 3 columns desktop, 1 column mobile */
@@ -178,8 +215,14 @@ a:active {
 }
 
 .game-card {
+    /* ensure cards sit above decorative blobs and are fully opaque */
+    position: relative;
+    z-index: 3;
+    isolation: isolate;
+
     border-radius: var(--radius);
     background: linear-gradient(180deg,#ffffff, #fff8f2);
+    background-color: #fff; /* solid fallback to avoid any transparency */
     border: 0.12rem solid rgba(64,85,224,0.06);
     overflow: hidden;
     transition: box-shadow .25s ease, border-color .25s ease, background .25s ease;
@@ -204,7 +247,7 @@ a:active {
 }
 .screenshot img{ width:100%; height:100%; object-fit:cover; }
 
-.meta{ padding: 1rem 1.2rem; }
+.meta{ padding: 1rem 1.2rem; text-align: center; }
 .meta h3{ margin-bottom:.3rem; font-size:1.8rem; font-family:'Baloo 2', 'Playwrite GB S', system-ui, sans-serif; color: var(--brand-blue); }
 .meta .desc{ margin:0; color: #444; font-size:1.3rem; font-style: italic; }
 

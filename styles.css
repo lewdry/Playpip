@@ -87,7 +87,7 @@ h1:focus-visible{ outline: 0.28rem solid var(--sun); outline-offset: .4rem; bord
 }
 
 .hero-decor{ position: absolute; inset:0; pointer-events:none; z-index:0; }
-.blob{ position:absolute; width:220px; height:220px; opacity:.12; filter: blur(14px); transform-origin:center; /* center horizontally around the left% */ transform: translateX(-50%) translateY(0); will-change: transform; animation: bob 6s ease-in-out infinite; }
+.blob{ position:absolute; width:220px; height:220px; opacity:.12; filter: blur(14px); transform-origin:center; /* center horizontally around the left% */ transform: translateX(-50%) translateY(0); will-change: transform; /* animation removed */ }
 .blob-left{ left:-60px; fill: var(--melon); }
 .blob-right{ right:-80px; fill: var(--mint); }
 
@@ -107,7 +107,7 @@ h1:focus-visible{ outline: 0.28rem solid var(--sun); outline-offset: .4rem; bord
 .blob-left{ fill: var(--melon); }
 .blob-right{ fill: var(--mint); }
 
-@keyframes bob{ 0%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(-12px);} 100%{ transform: translateX(-50%) translateY(0);} }
+/* motion removed: blobs are static now */
 
 /* Confetti removed per request */
 
@@ -202,14 +202,19 @@ a:active {
     .blob--1, .blob--2, .blob--3, .blob--4, .blob--5, .blob--6, .blob--7, .blob--8, .blob--9, .blob--10 { left: 50%; right: auto; }
 }
 
-/* Games grid: 3 columns desktop, 1 column mobile */
+/* Games grid: 3 columns desktop, 2 columns mobile, 1 column on very small screens */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
     margin-top: 1.6rem;
 }
+/* 2 columns on narrow screens (phones) */
 @media (max-width: 720px){
+  .games-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* Very small screens: fall back to single column to avoid cramped cards */
+@media (max-width: 420px){
   .games-grid { grid-template-columns: 1fr; }
 }
 

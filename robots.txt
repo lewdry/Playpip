@@ -1,0 +1,20 @@
+---
+layout: null
+---
+# Playpip.games Robots Exclusion File
+# Purpose: Direct crawlers to games and protect crawl budget
+
+User-agent: *
+Disallow: /images/           # Optional: Disallow crawling the raw images folder
+Disallow: /styles.css        # Optional: Disallow crawling pure CSS files
+Allow: /                     # Allow all other pages
+
+# Explicitly block AI scrapers if you want to protect your "organic" assets
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Direct link to the sitemap (ensure the URL is fully qualified)
+Sitemap: https://playpip.games/sitemap.xml

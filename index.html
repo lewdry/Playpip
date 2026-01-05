@@ -18,7 +18,7 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://playpip.games">
-<meta property="og:title" content="Playpip - Organic Games from Sydney, Australia">
+<meta property="og:title" content="Playpip: Organic Games from Sydney, Australia">
 <meta property="og:description" content="Play organic games by Playpip">
 <meta property="og:image" content="https://playpip.games/playpip.png">
 <meta property="og:image:alt" content="Playpip logo">
@@ -39,7 +39,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@400&family=Baloo+2:wght@400;700&family=M+PLUS+Rounded+1c:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 
 
 <!-- Structured Data / Schema.org -->
@@ -204,26 +204,19 @@ document.addEventListener('DOMContentLoaded', function() {
 <header class="hero">
   <div class="hero-inner">
     <h1 tabindex="0">Playpip.</h1>
+    <p class="hero-sub">Handmade games from Dharawal country, near Sydney</p>
   </div>
-
-
 </header>
-  <div class="hero-decor" aria-hidden="true">
-    <!-- soft blobs (10 total) placed around the card -->
-    <svg class="blob blob--1" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--2" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--3" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--4" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--5" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--6" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--7" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--8" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--9" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-    <svg class="blob blob--10" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="100" /></svg>
-  </div>
+
+<!-- Decorative blobs (fixed position, handled in CSS) -->
+<div class="hero-decor" aria-hidden="true">
+  <div class="blob blob--1"></div>
+  <div class="blob blob--2"></div>
+  <div class="blob blob--3"></div>
+  <div class="blob blob--4"></div>
+</div>
+
 <section id="content">
-<p>We are Playpip. We make games.</p>
-<p>We work and play on Dharawal land near Sydney, Australia.</p>
 
 <!-- Games grid: two-column cards with screenshot + details -->
 <div class="games-grid" aria-label="Playpip games">
@@ -364,14 +357,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div> 
 <footer>
-<p>Email Playpip at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
-<p>Built by <a href="https://lewisdryburgh.com" target="_blank" rel="noopener noreferrer">Lewis Dryburgh</a></p>
+<p>Say g'day at <a href="mailto:hello@playpip.games">hello@playpip.games</a></p>
+<p>Made with 🌿 by <a href="https://lewisdryburgh.com" target="_blank" rel="noopener noreferrer">Lewis Dryburgh</a></p>
 </footer>
 </section>
 </main>
-
-<!-- Randomize decorative blob positions on each load -->
-<script src="scripts/randomize-blobs.js"></script>
-
 </body>
 </html>

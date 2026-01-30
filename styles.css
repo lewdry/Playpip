@@ -124,20 +124,6 @@ h1 {
     0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* Decorative underline */
-h1::after {
-  content: '';
-  position: absolute;
-  bottom: -0.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 0.4rem;
-  background: linear-gradient(90deg, transparent, var(--ochre), var(--terracotta), var(--ochre), transparent);
-  border-radius: 2px;
-  opacity: 0.7;
-}
-
 h1:focus-visible {
   outline: 0.3rem solid var(--ochre);
   outline-offset: 0.6rem;
